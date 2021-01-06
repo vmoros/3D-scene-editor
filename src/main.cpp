@@ -75,17 +75,17 @@ void make_bunny();
 void make_bumpy_cube();
 
 std::vector<std::string> skybox_faces{
-    "../data/night_posx.png", // right
-    "../data/night_negx.png", // left
-    "../data/night_posy.png", // top    
-    "../data/night_negy.png", // bottom
-    "../data/night_posz.png", // back
-    "../data/night_negz.png", // front
+    "../data/skybox/right.jpg",
+    "../data/skybox/left.jpg",
+    "../data/skybox/top.jpg",   
+    "../data/skybox/bottom.jpg",
+    "../data/skybox/front.jpg",
+    "../data/skybox/back.jpg"
 };
 
 // citation: https://learnopengl.com/Advanced-OpenGL/Cubemaps
 GLuint loadCubemap(std::vector<std::string> faces) {
-    stbi_set_flip_vertically_on_load(true);
+    stbi_set_flip_vertically_on_load(false);
     GLuint textureID;
     glGenTextures(1, &textureID);
     glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
@@ -208,7 +208,7 @@ int main() {
     load_shaders();
     load_model_files();
 
-    camera = Camera(glm::vec3(-1, 3, 5), glm::vec3(0, 1, 0));
+    camera = Camera(glm::vec3(-2, 1, 7), glm::vec3(0, 1, 0));
     light = Light(10000, 10000, 1.0f, 1.0f, 1.0f, 0.2f, 0.5f, 3.0f, -1.0f, -3.0f);
 
     proj = glm::perspective(glm::radians(45.0f), (float)window_width / window_height, 0.1f, 100.0f);
