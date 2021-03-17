@@ -1,5 +1,6 @@
 # Interactive Computer Graphics, Assignment 4
-## Viktor Moros
+## Demo
+![demo](bunnies.webp)
 
 ## Description
 This is a 3D scene editor with shadow mapping and environment mapping. You can insert, move, rotate, and rescale 3D models.
